@@ -1,0 +1,24 @@
+---
+description: WebMCP Process-to-Component guardrails
+alwaysApply: false
+---
+
+Read the `webmcp` skill before implementing WebMCP features.
+
+Treat templates as instructional scaffolds.
+
+Preserve target application architecture and conventions.
+
+One authoritative schema.
+JSON Schema derived from that schema.
+One shared process handler.
+Human UI and WebMCP both call the handler.
+
+Use document.modelContext.
+Use AbortSignal for registration cleanup.
+Propagate execution AbortSignal.
+
+No demo data.
+No mock business logic.
+No fallback behavior.
+No unrelated changes.
