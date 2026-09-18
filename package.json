@@ -1,6 +1,6 @@
 {
   "name": "@fomolab.space/webmcp-generator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A pure skill installer for AI agents implementing WebMCP Process-to-Component architecture",
   "main": "./bin/cli.js",
   "type": "module",
