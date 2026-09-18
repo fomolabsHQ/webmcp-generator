@@ -1,0 +1,10 @@
+{
+  "name": "target-react-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "react": "^19.0.0",
+    "zod": "^3.24.2"
+  }
+}

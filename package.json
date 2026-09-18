@@ -1,30 +1,38 @@
 {
-  "name": "webmcp-process-to-component",
-  "private": true,
-  "version": "0.1.0",
+  "name": "webmcp-generator",
+  "version": "2.0.0",
+  "description": "A pure skill installer for AI agents implementing WebMCP Process-to-Component architecture",
+  "main": "./bin/cli.js",
   "type": "module",
+  "bin": {
+    "webmcp-generator": "./bin/cli.js"
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "test": "node --test"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "lucide-react": "^1.16.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.2",
-    "zod": "^3.24.2"
+    "fs-extra": "^11.2.0"
   },
-  "devDependencies": {
-    "@types/node": "^22.13.5",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3",
-    "vite": "^6.2.0"
-  }
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "templates/",
+    "references/",
+    "agents/",
+    "SKILL.md",
+    "README.md"
+  ],
+  "keywords": [
+    "webmcp",
+    "ai-agent",
+    "agent-skills",
+    "claude-code",
+    "cursor",
+    "codex",
+    "opencode",
+    "process-to-component"
+  ],
+  "license": "MIT"
 }
