@@ -1,90 +1,96 @@
 # WebMCP Generator
 
-A Pure Skill installer for AI coding agents implementing
-WebMCP Process-to-Component architecture.
+Skill for AI coding agents to implement WebMCP components with a Process-to-Component architecture.
 
-## How it works
+The CLI installs the skill; the AI coding agent uses it to implement WebMCP components in the target application.
 
-```text
-webmcp-generator
-      │
-      ▼
-install skill + templates + references
-      │
-      ▼
-AI coding agent
-      │
-      ▼
-inspect target application
-      │
-      ▼
-adapt instructional scaffolds
-      │
-      ▼
-implement WebMCP component
-```
-
-## Install
+## Installation
 
 ```bash
-npx @fomolab.space/webmcp-generator
+npx webmcp-generator
 ```
 
 To explicitly overwrite existing generated WebMCP integration files:
 
 ```bash
-npx @fomolab.space/webmcp-generator --force
+npx webmcp-generator --force
 ```
 
-## What gets installed
+## How It Works
 
-- WebMCP skill
-- Process-to-Component templates
-- WebMCP runtime references
-- agent-specific integration artifacts
+```text
+webmcp-generator
+       │
+       ▼
+install skill + templates + references
+       │
+       ▼
+AI coding agent
+       │
+       ▼
+inspect target application
+       │
+       ▼
+adapt instructional scaffolds
+       │
+       ▼
+implement WebMCP component
+```
 
-## What the CLI does not do
+The CLI provides the implementation guidance and supporting artifacts. The AI coding agent adapts them to the target application's existing architecture and implements the WebMCP component.
 
-The CLI does not:
+## What Gets Installed
 
-- generate business logic;
-- generate React components;
-- inspect your application;
-- install application dependencies;
-- create database records;
-- create demo data;
-- create fallback behavior;
-- run an AI model.
-
-The AI coding agent performs those implementation steps after inspecting the target project.
+* WebMCP skill
+* Process-to-Component architecture templates
+* WebMCP runtime references
+* Agent-specific integration artifacts
 
 ## Architecture
 
+The Process-to-Component architecture separates the underlying business process from the interfaces that invoke it.
+
 ```text
-Zod Schema
-    │
-    ├── Human UI validation
-    │
-    └── JSON Schema
-           │
-           ▼
-      WebMCP Tool
-           │
-           ▼
-Shared Process Handler
-           ▲
-           │
-       Human UI
+                    Zod Schema
+                         │
+              ┌──────────┴──────────┐
+              │                     │
+              ▼                     ▼
+         Human UI             JSON Schema
+              │                     │
+              │                     ▼
+              │                WebMCP Tool
+              │                     │
+              └──────────┬──────────┘
+                         │
+                         ▼
+               Shared Process Handler
 ```
 
-## Important
+A single process handler can serve both human-facing UI and agent-facing WebMCP tools, while the schema provides consistent validation and WebMCP-compatible JSON Schema.
 
-Templates are instructional scaffolds.
+## Templates Are Scaffolds
 
-The agent must adapt them to the target application's:
+Templates are instructional scaffolds, not final implementations.
 
-- architecture;
-- dependencies;
-- design system;
-- business process;
-- existing conventions.
+The AI coding agent must adapt them to the target application's:
+
+* architecture
+* dependencies
+* design system
+* business process
+* existing conventions
+
+This allows the generated implementation to fit the existing application rather than forcing the application into a predefined template structure.
+
+## Supported AI Coding Agents
+
+The skill is designed to work with AI coding agents that support project-level skills or agent instructions, including:
+
+* Claude Code
+* Codex
+* Cursor
+* OpenCode
+
+## License
+MIT
