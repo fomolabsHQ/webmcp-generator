@@ -3,8 +3,6 @@
 A Pure Skill installer for AI coding agents implementing
 WebMCP Process-to-Component architecture.
 
-> **Note:** The CLI installs the skill. The AI agent generates the code.
-
 ## How it works
 
 ```text
@@ -29,13 +27,13 @@ implement WebMCP component
 ## Install
 
 ```bash
-npx webmcp-generator
+npx @fomolab.space/webmcp-generator
 ```
 
 To explicitly overwrite existing generated WebMCP integration files:
 
 ```bash
-npx webmcp-generator --force
+npx @fomolab.space/webmcp-generator --force
 ```
 
 ## What gets installed
